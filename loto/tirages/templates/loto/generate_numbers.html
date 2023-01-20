@@ -6,31 +6,93 @@
 {% block content %}
 
 <h1>Générateur de grille aléatoire du Loto !</h1>
+
+<script type="text/javascript" src="{% static 'javascript/myscripts.js' %}"></script>
+
 <p>
-    <div class="background_tirages">
+    <div class="background_tirages" id="background_tirages">
         <img src="{% static 'images/background_tirages.png' %}">
 
-        <div class="numero_1">
-            {{ random_tirage_loto.0 }}
+        <div class = "numeros">
+            <div class="numero_1" id="numero_1">
+                {{ random_tirage_loto.0 }}
+            </div>
+            <div class="numero_2" id="numero_2">
+                {{ random_tirage_loto.1 }}
+            </div>
+            <div class="numero_3" id="numero_3">
+                {{ random_tirage_loto.2 }}
+            </div>
+            <div class="numero_4" id="numero_4">
+                {{ random_tirage_loto.3 }}
+            </div>
+            <div class="numero_5" id="numero_5">
+                {{ random_tirage_loto.4 }}
+            </div>
+            <div class="numeroChance" id="numeroChance">
+                {{ random_tirage_loto.5.0 }}
+            </div>
         </div>
-        <div class="numero_2">
-            {{ random_tirage_loto.1 }}
-        </div>
-        <div class="numero_3">
-            {{ random_tirage_loto.2 }}
-        </div>
-        <div class="numero_4">
-            {{ random_tirage_loto.3 }}
-        </div>
-        <div class="numero_5">
-            {{ random_tirage_loto.4 }}
-        </div>
-        <div class="etoile_1">
-            {{ random_tirage_loto.5.0 }}
-        </div>
-
+        <button id="generate_random_numbers" onclick="getNewNumbers()">Générer de nouveaux numéros</button>
     </div>
-    
+</p>
+
+<h1>Les numéros les plus sortis depuis le début Loto !</h1>
+
+<p>
+    <div class="background_tirages" id="background_tirages">
+        <img src="{% static 'images/background_tirages.png' %}">
+
+        <div class = "numeros">
+            <div class="numero_1" id="numero_1">
+                {{ top_numbers.0 }}
+            </div>
+            <div class="numero_2" id="numero_2">
+                {{ top_numbers.1 }}
+            </div>
+            <div class="numero_3" id="numero_3">
+                {{ top_numbers.2 }}
+            </div>
+            <div class="numero_4" id="numero_4">
+                {{ top_numbers.3 }}
+            </div>
+            <div class="numero_5" id="numero_5">
+                {{ top_numbers.4 }}
+            </div>
+            <div class="numeroChance" id="numeroChance">
+                {{ top_numbersChance.0 }}
+            </div>
+        </div>
+    </div>
+</p>
+
+<h1>Les numéros les moins joués depuis le début Loto !</h1>
+
+<p>
+    <div class="background_tirages" id="background_tirages">
+        <img src="{% static 'images/background_tirages.png' %}">
+
+        <div class = "numeros">
+            <div class="numero_1" id="numero_1">
+                {{ least_numbers.0 }}
+            </div>
+            <div class="numero_2" id="numero_2">
+                {{ least_numbers.1 }}
+            </div>
+            <div class="numero_3" id="numero_3">
+                {{ least_numbers.2 }}
+            </div>
+            <div class="numero_4" id="numero_4">
+                {{ least_numbers.3 }}
+            </div>
+            <div class="numero_5" id="numero_5">
+                {{ least_numbers.4 }}
+            </div>
+            <div class="numeroChance" id="numeroChance">
+                {{ least_numbersChance.0 }}
+            </div>
+        </div>
+    </div>
 </p>
 
 {% endblock %}

@@ -17,7 +17,8 @@
     {% block content %}{% endblock %}
 
     <footer>
-        <p>Copyright {{ year }}</p>
+        <p>Date: {{year|date:'D j F Y'}}</p>
+        <p>Copyright {{ year|date:"Y" }}</p>
     </footer>
 </body>
 </html>
