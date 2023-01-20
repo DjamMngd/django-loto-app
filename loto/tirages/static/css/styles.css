@@ -1,0 +1,60 @@
+*{
+    background-color: black;
+}
+
+body{
+    color: white;
+}
+
+.background_tirages {
+    position: relative; /* pour permettre de positionner les éléments enfants de manière absolue */
+    width: 30%;
+}
+
+.background_tirages img {
+    display: block; /* pour que l'image prenne toute la largeur disponible */
+    width: 100%; /* pour que l'image prenne toute la largeur disponible */
+}
+
+.numero_1, .numero_2, .numero_3, .numero_4, .numero_5, .etoile_1{
+    position: absolute; /* pour pouvoir positionner chaque élément de manière absolue par rapport à son parent */
+    top: 50%; /* pour centrer verticalement */
+    transform: translateY(-50%); /* pour centrer verticalement */
+    text-align: center; /* pour centrer horizontalement le contenu de chaque élément */
+    background-color: transparent; /* pour avoir un fond transparent */
+    font-size: 250%;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.numero_1 {
+    left: 5% ; /* pour positionner à X% de la largeur */
+    /* background-color: brown; */
+}
+
+.numero_2 {
+    left: 19%; /* pour positionner à X% de la largeur */
+    /* background-color: brown; */
+}
+
+.numero_3 {
+    left: 33.5%; /* pour positionner à X% de la largeur */
+    /* background-color: brown; */
+}
+
+.numero_4 {
+    left: 47.5%; /* pour positionner à X% de la largeur */
+    /* background-color: brown; */
+}
+
+.numero_5 {
+    left: 62%; /* pour positionner à X% de la largeur */
+    /* background-color: brown; */
+}
+
+.etoile_1 {
+    left: 86.5%; /* pour positionner à X% de la largeur */
+    /* background-color: white; */
+}
+

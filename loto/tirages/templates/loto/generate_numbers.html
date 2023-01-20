@@ -1,0 +1,36 @@
+{% extends 'loto/base.html' %}
+{% load static %}
+
+{% block title %}Tirages{% endblock %}
+
+{% block content %}
+
+<h1>Générateur de grille aléatoire du Loto !</h1>
+<p>
+    <div class="background_tirages">
+        <img src="{% static 'images/background_tirages.png' %}">
+
+        <div class="numero_1">
+            {{ random_tirage_loto.0 }}
+        </div>
+        <div class="numero_2">
+            {{ random_tirage_loto.1 }}
+        </div>
+        <div class="numero_3">
+            {{ random_tirage_loto.2 }}
+        </div>
+        <div class="numero_4">
+            {{ random_tirage_loto.3 }}
+        </div>
+        <div class="numero_5">
+            {{ random_tirage_loto.4 }}
+        </div>
+        <div class="etoile_1">
+            {{ random_tirage_loto.5.0 }}
+        </div>
+
+    </div>
+    
+</p>
+
+{% endblock %}

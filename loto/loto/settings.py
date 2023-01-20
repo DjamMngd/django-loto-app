@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from django.db.models import signals
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tirages',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +81,19 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# On définit AUTH_USER_MODEL pour utiliser mon modèle d'utilisateur personnalisé :
+AUTH_USER_MODEL = 'tirages.User'
+
+'''
+Si vous avez des relations dans votre modèle d'utilisateur avec d'autres modèles,
+vous devrez également configurer la gestion des références croisées (CRUD)
+en ajoutant les lignes suivantes dans le fichier settings:
+'''
+
+signals.post_save.disconnect(
+    dispatch_uid="django.contrib.auth.models.User.save"
+)
 
 
 # Password validation
