@@ -1,6 +1,66 @@
-*{
-    background-color: black;
-    color: white;
+header {
+    background-color: #111;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 150px;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover,
+.account a:hover{
+    color: #aaaaaa;
+}
+
+.account a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+body {
+    background-color: #141414;
+    color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* pour s'assurer qu'il prend toute la hauteur de la page */ 
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+    flex: 1; /* pour occuper tout l'espace disponible */
 }
 
 .background_tirages {
@@ -15,7 +75,7 @@
     width: 100%; /* pour que l'image prenne toute la largeur disponible */
 }
 
-.numero_1, .numero_2, .numero_3, .numero_4, .numero_5, .numeroChance{
+.numero_1, .numero_2, .numero_3, .numero_4, .numero_5, .numeroChance_1, .numeroChance_2{
     position: absolute; /* pour pouvoir positionner chaque élément de manière absolue par rapport à son parent */
     top: 50%; /* pour centrer verticalement */
     transform: translateY(-50%); /* pour centrer verticalement */
@@ -51,8 +111,57 @@
     /* background-color: brown; */
 }
 
-.numeroChance {
+.numeroChance_1 {
     left: 86.6%; /* pour positionner à X% de la largeur */
     /* background-color: white; */
 }
 
+.numeroChance_2 {
+    left: 90.6%; /* pour positionner à X% de la largeur */
+    /* background-color: white; */
+}
+
+#generate_random_loto_numbers,
+#generate_random_euroMillion_numbers {
+    width: 130px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 25px;
+  }
+
+  /* ------ Partie Footer ------ */
+
+  footer {
+    background-color: #111;
+    color: #fff;
+    padding: 2rem 0;
+  }
+  
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    margin-right: 1rem;
+  }
+  
+  .footer-social a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  
+  .footer-copyright {
+    color: #fff;
+  }
+/* 
+  .visible {
+    visibility: visible;
+  } */
+
+  .errorlist { margin-bottom: -10px }

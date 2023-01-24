@@ -1,11 +1,48 @@
 {% extends 'loto/base.html' %}
+{% load static %}
 
 {% block title %}index{% endblock %}
 
 {% block content %}
+<h1>Bienvenue sur notre site de Loto !</h1>
 
-<h1>Page d'accueil !!!</h1>
+<div id="accueil">
+    <p>Notre site vous propose de découvrir l'univers passionnant des jeux de loterie en ligne, 
+        avec un focus particulier sur le célèbre jeu de Loto.</p>
+    <p>Vous pourrez ici générer des grilles aléatoires, consulter les résultats des derniers tirages, 
+        découvrir les numéros les plus et les moins sortis, et bien plus encore !</p>
+    <p>N'hésitez pas à explorer notre site pour en découvrir toutes les fonctionnalités et à tenter votre chance au Loto !</p>
+</div>
 
-<p>Pour avoir des numéros générés cliquez <a href="{% url 'generate_numbers' %}">ici</a></p>
+<script type="text/javascript" src="{% static 'javascript/myscripts.js' %}"></script>
+
+<h2>Le dernier tirage Loto du {{ loto.date_de_tirage }} !</h2>
+
+<div class="background_tirages" id="background_tirages">
+    <img src="{% static 'images/background_tirages.png' %}">
+
+    <div class = "numeros">
+        <div class="numero_1" id="numero_1_random">
+            {{ loto.boule_1 }}
+        </div>
+        <div class="numero_2" id="numero_2_random">
+            {{ loto.boule_2 }}
+        </div>
+        <div class="numero_3" id="numero_3_random">
+            {{ loto.boule_3 }}
+        </div>
+        <div class="numero_4" id="numero_4_random">
+            {{ loto.boule_4 }}
+        </div>
+        <div class="numero_5" id="numero_5_random">
+            {{ loto.boule_5 }}
+        </div>
+        <div class="numeroChance_1" id="numeroChance_1_random">
+            {{ loto.numero_chance }}
+        </div>
+    </div>
+</div>
+
+<h2>Le dernier tirage EuroMillion du {{ loto.date_de_tirage }} !</h2>
 
 {% endblock %}

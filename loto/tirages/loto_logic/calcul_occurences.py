@@ -1,10 +1,16 @@
 import pandas as pd
+import os
 
 def calculOccurrences(data_Loto_Final):
 
-    # Mes fichiers CSV à creer :
-    file_dataFrameOccurrencesNumeros = "tirages\loto_logic\Historique\loto - Occurences Numeros.csv"
-    file_dataFrameOccurrencesNumerosChance = "tirages\loto_logic\Historique\loto - Occurences Numero Chance.csv"
+    if os.name == "nt":
+        # Mes fichiers CSV à creer (Windows):
+        file_dataFrameOccurrencesNumeros = "tirages\loto_logic\Historique\loto - Occurences Numeros.csv"
+        file_dataFrameOccurrencesNumerosChance = "tirages\loto_logic\Historique\loto - Occurences Numero Chance.csv"
+    else:
+        # Mes fichiers CSV à creer (Linux):
+        file_dataFrameOccurrencesNumeros = "tirages/loto_logic/Historique/loto - Occurences Numeros.csv"
+        file_dataFrameOccurrencesNumerosChance = "tirages/loto_logic/Historique/loto - Occurences Numero Chance.csv"
 
         
     # On va creer un dictionnaire qui contiendra le nombre de fois où chaque numéro est sorti

@@ -7,18 +7,42 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="{% url 'index' %}">Accueil</a>
-            <a href="{% url 'about' %}">A propos</a>
-            <a href="{% url 'contact' %}">Contact</a>
-        </nav>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{% url 'index' %}"><img src="{% static 'images/logo_loto.png' %}" alt="Loto Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Accueil</a></li>
+                    <li><a href="{% url 'generate_loto_numbers' %}">Générateur grilles Loto</a></li>
+                    <li><a href="{% url 'generate_euroMillion_numbers' %}">Générateur grilles EuroMillion</a></li>
+                    <li><a href="{% url 'contact' %}">Nous contacter</a></li>
+                </ul>
+            </nav>
+            <div class="account">
+                <a href="#">Connexion</a>
+            </div>
+        </div>
     </header>
 
-    {% block content %}{% endblock %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
 
     <footer>
-        <p>Date: {{year|date:'D j F Y'}}</p>
-        <p>Copyright {{ year|date:"Y" }}</p>
-    </footer>
+        <div class="footer-container">
+          <div class="footer-links">
+            <a href="#">A propos</a>
+            <a href="#">Conditions d'utilisation</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="{% url 'contact' %}">Nous contacter</a>
+          </div>
+          <div class="footer-copyright">
+            Copyright {{ year|date:"Y" }} - Mon site Loto
+            <!-- <p>Date: {{year|date:'D j F Y'}}</p> -->
+          </div>
+        </div>
+      </footer>
 </body>
 </html>

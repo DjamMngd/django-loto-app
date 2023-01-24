@@ -14,3 +14,13 @@ class User(AbstractUser):
     bio = models.TextField(null=True, blank=True)
 
     # Ajouter les champs necessaires pour les tirages de loto
+
+class Loto(models.Model):
+    date_de_tirage = models.DateField()
+    combinaison_gagnante_en_ordre_croissant = models.CharField(max_length=20)
+    boule_1 = models.IntegerField()
+    boule_2 = models.IntegerField()
+    boule_3 = models.IntegerField()
+    boule_4 = models.IntegerField()
+    boule_5 = models.IntegerField()
+    numero_chance = models.IntegerField()

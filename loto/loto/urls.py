@@ -22,5 +22,9 @@ urlpatterns = [
     path('index/', views.index, name="index"),
     path('about/', views.about, name="about"),
     path('contact/', views.contact, name="contact"),
-    path('generate_numbers/', views.generate_loto_numbers, name="generate_numbers"),
+    path('email_sent/', views.email_sent, name="email_sent"),
+    path('generate_loto_numbers/', views.generate_loto_numbers, name="generate_loto_numbers"),
+    path('generate_euroMillion_numbers/', views.generate_euroMillion_numbers, name="generate_euroMillion_numbers"),
+    path('newRandomLotoNumbers/', views.newRandomLotoNumbers, name="generate_NewRandomLotoNumbers"),
+    path('newRandomEuroMillionNumbers/', views.newRandomEuroMillionNumbers, name="generate_NewRandomEuroMillionNumbers"),
 ]

@@ -1,0 +1,54 @@
+{% extends 'loto/base.html' %}
+{% load static %}
+
+{% block title %}Tirages{% endblock %}
+
+{% block content %}
+
+<h1>Générateur de grille aléatoire de l'EuroMillion !</h1>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    let newRandomNumbersURL = "{% url 'generate_NewRandomEuroMillionNumbers' %}";
+</script>
+<script type="text/javascript" src="{% static 'javascript/myscripts.js' %}"></script>
+
+
+<p>
+    <div class="background_tirages" id="background_tirages">
+        <img src="{% static 'images/background_tirages.png' %}">
+
+        <div class = "numeros">
+            <div class="numero_1" id="numero_1_random">
+                {{ random_tirage_euroMillion.0 }}
+            </div>
+            <div class="numero_2" id="numero_2_random">
+                {{ random_tirage_euroMillion.1 }} 
+            </div>
+            <div class="numero_3" id="numero_3_random">
+                {{ random_tirage_euroMillion.2 }}
+            </div>
+            <div class="numero_4" id="numero_4_random">
+                {{ random_tirage_euroMillion.3 }}
+            </div>
+            <div class="numero_5" id="numero_5_random">
+                {{ random_tirage_euroMillion.4 }}
+            </div>
+            <div class="numeroChance_1" id="numeroChance_1_random">
+                {{ random_tirage_euroMillion.5 }}
+            </div>
+            <div class="numeroChance_2" id="numeroChance_2_random">
+                {{ random_tirage_euroMillion.6 }}
+            </div>
+        </div>
+    </div>
+    <button id="generate_random_euroMillion_numbers">Générer</button>
+</p>
+
+<h1>Les numéros les plus sortis depuis le début de l'EuroMillion !</h1>
+
+
+<h1>Les numéros les moins joués depuis le début de l'EuroMillion !</h1>
+
+
+{% endblock %}

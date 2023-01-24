@@ -3,7 +3,8 @@ from .merging_csv import mergingCSV
 from .calcul_occurences import calculOccurrences
 from .top_numbers import top_numbers, top_numbersChance
 from .least_numbers import least_numbers, least_numbersChance
-from .random_numbers import get_random_number, get_random_numberChance, get_random_tirage_loto
+from .random_numbers import get_random_loto_number, get_random_loto_numberChance, get_random_tirage_loto
+from .random_numbers import get_random_euroMillion_number, get_random_euroMillion_numberChance, get_random_tirage_euroMillion
 
 # On merge notre fichier loto dans un seul et on récupère le dataFrame de tous les numéros
 data_Loto_Final = mergingCSV()
@@ -11,6 +12,9 @@ data_Loto_Final = mergingCSV()
 # On va creer nos fichiers qui contiendront les occurrences des numeros normaux et des numeros chance
 dataFrameOccurrencesNumeros, dataFrameOccurrencesNumerosChance = calculOccurrences(data_Loto_Final)
 
+print("Le main est exécuté")
+
+'''
 # On récupére les 5 numéros les plus joués avec ou sans leurs occurences (True = avec, False = sans)
 print(top_numbers(dataFrameOccurrencesNumeros,5,False))
 
@@ -32,5 +36,5 @@ print(get_random_numberChance())
 # On génére une grille du loto aléatoire
 print(get_random_tirage_loto())
 
-
+'''
 
