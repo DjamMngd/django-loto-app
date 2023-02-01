@@ -3,7 +3,7 @@ window.onload = function() {
     let numeros = document.getElementsByClassName("numeros");
 
     for (let i = 0; i < numeros.length; i++) {
-        let fontSize = (parent.offsetHeight * 0.3) + "px";
+        let fontSize = (parent.offsetHeight * 0.26) + "px";
         numeros[i].style.fontSize = fontSize;
     }
 
@@ -15,7 +15,6 @@ window.onload = function() {
     if (buttonEuroMillion) {
         buttonEuroMillion.addEventListener("click", getNewEuroMillionNumbers, false);
     }
-
 }
 
 // Fonction onresize qui va permettre de redimentionner mes caractères en fonction 
@@ -28,7 +27,7 @@ window.onresize = function() {
         let parent = document.getElementById("background_tirages");
         let numeros = document.getElementsByClassName("numeros");
         for (let i = 0; i < numeros.length; i++) {
-            let fontSize = (parent.offsetHeight * 0.3) + "px";
+            let fontSize = (parent.offsetHeight * 0.26) + "px";
             numeros[i].style.fontSize = fontSize;
         }
     })
@@ -42,12 +41,12 @@ function getNewLotoNumbers() {
         {
             //alert("test");
             //console.log(response);
-            let numero_1 = document.getElementById("numero_1_random");
-            let numero_2 = document.getElementById("numero_2_random");
-            let numero_3 = document.getElementById("numero_3_random");
-            let numero_4 = document.getElementById("numero_4_random");
-            let numero_5 = document.getElementById("numero_5_random");
-            let numeroChance_1 = document.getElementById("numeroChance_1_random");
+            let numero_1 = document.getElementById("numero_1_loto_random");
+            let numero_2 = document.getElementById("numero_2_loto_random");
+            let numero_3 = document.getElementById("numero_3_loto_random");
+            let numero_4 = document.getElementById("numero_4_loto_random");
+            let numero_5 = document.getElementById("numero_5_loto_random");
+            let numeroChance_1 = document.getElementById("numeroChance_1_loto_random");
             numero_1.innerHTML = response.random_tirage_loto[0];
             numero_2.innerHTML = response.random_tirage_loto[1];
             numero_3.innerHTML = response.random_tirage_loto[2];
@@ -66,13 +65,13 @@ function getNewEuroMillionNumbers() {
         {
             //alert("test");
             //console.log(response);
-            let numero_1 = document.getElementById("numero_1_random");
-            let numero_2 = document.getElementById("numero_2_random");
-            let numero_3 = document.getElementById("numero_3_random");
-            let numero_4 = document.getElementById("numero_4_random");
-            let numero_5 = document.getElementById("numero_5_random");
-            let numeroChance_1 = document.getElementById("numeroChance_1_random");
-            let numeroChance_2 = document.getElementById("numeroChance_2_random");
+            let numero_1 = document.getElementById("numero_1_euroMillion_random");
+            let numero_2 = document.getElementById("numero_2_euroMillion_random");
+            let numero_3 = document.getElementById("numero_3_euroMillion_random");
+            let numero_4 = document.getElementById("numero_4_euroMillion_random");
+            let numero_5 = document.getElementById("numero_5_euroMillion_random");
+            let numeroChance_1 = document.getElementById("numeroChance_1_euroMillion_random");
+            let numeroChance_2 = document.getElementById("numeroChance_2_euroMillion_random");
             numero_1.innerHTML = response.random_tirage_euroMillion[0];
             numero_2.innerHTML = response.random_tirage_euroMillion[1];
             numero_3.innerHTML = response.random_tirage_euroMillion[2];
