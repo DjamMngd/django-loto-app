@@ -34,8 +34,6 @@ window.onresize = function() {
     })
 }
 
-
-
 function getNewLotoNumbers() {
     $.ajax({
         url: newRandomNumbersURL,

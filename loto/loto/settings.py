@@ -84,7 +84,7 @@ DATABASES = {
 }
 
 # On définit AUTH_USER_MODEL pour utiliser mon modèle d'utilisateur personnalisé :
-AUTH_USER_MODEL = 'tirages.User'
+# AUTH_USER_MODEL = 'tirages.User'
 
 '''
 Si vous avez des relations dans votre modèle d'utilisateur avec d'autres modèles,
