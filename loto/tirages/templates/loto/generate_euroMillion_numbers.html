@@ -46,9 +46,65 @@
 </p>
 
 <h1>Les numéros les plus sortis depuis le début de l'EuroMillion !</h1>
+<p>
+    <div class="background_tirages" id="background_tirages">
+        <img src="{% static 'images/background_tirages_euroMillion.png' %}">
 
+        <div class = "numeros">
+            <div class="numero_1_euroMillion" id="numero_1_euroMillion_top">
+                {{ top_numbers_euroMillion.0 }}
+            </div>
+            <div class="numero_2_euroMillion" id="numero_2_euroMillion_top">
+                {{ top_numbers_euroMillion.1 }}
+            </div>
+            <div class="numero_3_euroMillion" id="numero_3_euroMillion_top">
+                {{ top_numbers_euroMillion.2 }}
+            </div>
+            <div class="numero_4_euroMillion" id="numero_4_euroMillion_top">
+                {{ top_numbers_euroMillion.3 }}
+            </div>
+            <div class="numero_5_euroMillion" id="numero_5_euroMillion_top">
+                {{ top_numbers_euroMillion.4 }}
+            </div>
+            <div class="numeroChance_1_euroMillion" id="numeroChance_1_euroMillion_top">
+                {{ top_numbersChance_euroMillion.0 }}
+            </div>
+            <div class="numeroChance_2_euroMillion" id="numeroChance_2_euroMillion_top">
+                {{ top_numbersChance_euroMillion.1 }}
+            </div>
+        </div>
+    </div>
+</p>
 
 <h1>Les numéros les moins joués depuis le début de l'EuroMillion !</h1>
+<p>
+    <div class="background_tirages" id="background_tirages">
+        <img src="{% static 'images/background_tirages_euroMillion.png' %}">
 
+        <div class = "numeros">
+            <div class="numero_1_euroMillion" id="numero_1_euroMillion_least">
+                {{ least_numbers_euroMillion.0 }}
+            </div>
+            <div class="numero_2_euroMillion" id="numero_2_euroMillion_least">
+                {{ least_numbers_euroMillion.1 }}
+            </div>
+            <div class="numero_3_euroMillion" id="numero_3_euroMillion_least">
+                {{ least_numbers_euroMillion.2 }}
+            </div>
+            <div class="numero_4_euroMillion" id="numero_4_euroMillion_least">
+                {{ least_numbers_euroMillion.3 }}
+            </div>
+            <div class="numero_5_euroMillion" id="numero_5_euroMillion_least">
+                {{ least_numbers_euroMillion.4 }}
+            </div>
+            <div class="numeroChance_1_euroMillion" id="numeroChance_1_euroMillion_least">
+                {{ least_numbersChance_euroMillion.0 }}
+            </div>
+            <div class="numeroChance_2_euroMillion" id="numeroChance_2_euroMillion_least">
+                {{ least_numbersChance_euroMillion.1 }}
+            </div>
+        </div>
+    </div>
+</p>
 
 {% endblock %}

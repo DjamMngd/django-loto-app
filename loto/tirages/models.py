@@ -24,3 +24,34 @@ class Loto(models.Model):
     boule_4 = models.IntegerField()
     boule_5 = models.IntegerField()
     numero_chance = models.IntegerField()
+
+class EuroMillion(models.Model):
+    date_de_tirage = models.DateField()
+    boules_gagnantes_en_ordre_croissant = models.CharField(max_length=20)
+    etoiles_gagnantes_en_ordre_croissant = models.CharField(max_length=10)
+    boule_1 = models.IntegerField()
+    boule_2 = models.IntegerField()
+    boule_3 = models.IntegerField()
+    boule_4 = models.IntegerField()
+    boule_5 = models.IntegerField()
+    numero_chance_1 = models.IntegerField()
+    numero_chance_2 = models.IntegerField()
+
+class OccurrencesNumerosLoto(models.Model):
+    numero = models.IntegerField()
+    occurrences = models.IntegerField()
+
+class OccurrencesNumerosChanceLoto(models.Model):
+    numero_chance = models.IntegerField()
+    occurrences = models.IntegerField()
+
+class OccurrencesNumerosEuroMillion(models.Model):
+    numero = models.IntegerField()
+    occurrences = models.IntegerField()
+
+class OccurrencesNumerosChanceEuroMillion(models.Model):
+    numero_chance = models.IntegerField()
+    occurrences = models.IntegerField()
+
+
+

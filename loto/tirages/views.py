@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .loto_logic import main as mainLoto
+from .loto_logic import main_database as mainLoto
 from datetime import datetime
 from django.http import JsonResponse
-from tirages.models import Loto
+from tirages.models import Loto, EuroMillion
 from tirages.forms import ContactUsForm
 from django.core.mail import send_mail
 from django.shortcuts import redirect
@@ -11,8 +11,9 @@ from django.shortcuts import redirect
 
 def index(request):
     loto = Loto.objects.latest('date_de_tirage')
+    euroMillion = EuroMillion.objects.latest('date_de_tirage')
     current_year = datetime.now()
-    return render(request, 'loto/index.html', {'year': current_year, 'loto': loto})
+    return render(request, 'loto/index.html', {'year': current_year, 'loto': loto, 'euroMillion': euroMillion})
 
 def about(request): 
     current_year = datetime.now()
@@ -56,10 +57,10 @@ def generate_loto_numbers(request):
         request, 
         'loto/generate_loto_numbers.html', 
         {
-            'top_numbers' : mainLoto.top_numbers(mainLoto.dataFrameOccurrencesNumeros,5,False), 
-            'top_numbersChance' : mainLoto.top_numbers(mainLoto.dataFrameOccurrencesNumerosChance,1,False), 
-            'least_numbers' : mainLoto.least_numbers(mainLoto.dataFrameOccurrencesNumeros,5,False), 
-            'least_numbersChance' : mainLoto.least_numbers(mainLoto.dataFrameOccurrencesNumerosChance,1,False),
+            'top_numbers_loto' : mainLoto.top_numbers(mainLoto.dataFrameOccurrencesNumerosLoto,5,False), 
+            'top_numbersChance_loto' : mainLoto.top_numbers(mainLoto.dataFrameOccurrencesNumerosChanceLoto,1,False), 
+            'least_numbers_loto' : mainLoto.least_numbers(mainLoto.dataFrameOccurrencesNumerosLoto,5,False), 
+            'least_numbersChance_loto' : mainLoto.least_numbers(mainLoto.dataFrameOccurrencesNumerosChanceLoto,1,False),
             'random_tirage_loto' : mainLoto.get_random_tirage_loto(), 
             'year': current_year
         }
@@ -73,7 +74,11 @@ def generate_euroMillion_numbers(request):
         request, 
         'loto/generate_euroMillion_numbers.html', 
         {
-            'random_tirage_euroMillion' : mainLoto.get_random_tirage_euroMillion(), 
+            'top_numbers_euroMillion' : mainLoto.top_numbers(mainLoto.dataFrameOccurrencesNumerosEuroMillion,5,False), 
+            'top_numbersChance_euroMillion' : mainLoto.top_numbers(mainLoto.dataFrameOccurrencesNumerosChanceEuroMillion,2,False), 
+            'least_numbers_euroMillion' : mainLoto.least_numbers(mainLoto.dataFrameOccurrencesNumerosEuroMillion,5,False), 
+            'least_numbersChance_euroMillion' : mainLoto.least_numbers(mainLoto.dataFrameOccurrencesNumerosChanceEuroMillion,2,False),
+            'random_tirage_euroMillion' : mainLoto.get_random_tirage_euroMillion(),
             'year': current_year
         }
     )

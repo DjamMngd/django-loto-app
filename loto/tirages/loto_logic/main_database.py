@@ -1,0 +1,16 @@
+from tirages.models import Loto, EuroMillion, OccurrencesNumerosLoto, OccurrencesNumerosChanceLoto, OccurrencesNumerosEuroMillion, OccurrencesNumerosChanceEuroMillion
+from .get_database_data import get_database_data
+from .top_numbers import top_numbers, top_numbersChance
+from .least_numbers import least_numbers, least_numbersChance
+from .random_numbers import get_random_loto_number, get_random_loto_numberChance, get_random_tirage_loto
+from .random_numbers import get_random_euroMillion_number, get_random_euroMillion_numberChance, get_random_tirage_euroMillion
+
+# On récupère les datas de notre base de donnée dans des dataFrame
+dataFrameLoto_Final = get_database_data(Loto)
+dataFrameEuroMillion_Final = get_database_data(EuroMillion)
+
+dataFrameOccurrencesNumerosLoto = get_database_data(OccurrencesNumerosLoto)
+dataFrameOccurrencesNumerosChanceLoto = get_database_data(OccurrencesNumerosChanceLoto)
+dataFrameOccurrencesNumerosEuroMillion = get_database_data(OccurrencesNumerosEuroMillion)
+dataFrameOccurrencesNumerosChanceEuroMillion = get_database_data(OccurrencesNumerosChanceEuroMillion)
+
