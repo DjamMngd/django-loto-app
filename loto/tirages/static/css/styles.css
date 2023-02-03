@@ -166,51 +166,89 @@ main {
 .numeroChance_1_euroMillion {
     left: 71.7%; /* pour positionner à X% de la largeur */
      /*background-color: rgb(194, 19, 19); */
+     color: black;
 }
 
 .numeroChance_2_euroMillion {
     left: 85%; /* pour positionner à X% de la largeur */
      /*background-color: rgb(194, 19, 19); */
+     color: black;
 }
 
 
 #generate_random_loto_numbers,
-#generate_random_euroMillion_numbers {
+#generate_random_euroMillion_numbers,
+#button_stats_numero_loto,
+#button_stats_numero_chance_loto,
+#button_stats_numero_euroMillion,
+#button_stats_numero_chance_euroMillion {
     width: 130px;
     height: 50px;
     font-size: 20px;
     border-radius: 25px;
-  }
+    color: white;
+    border-color: white;
+}
 
-  /* ------ Partie Footer ------ */
+#generate_random_loto_numbers,
+#button_stats_numero_loto,
+#button_stats_numero_chance_loto  {
+    background-color: rgb(0, 130, 174);
+}
 
-  footer {
+#generate_random_euroMillion_numbers,
+#button_stats_numero_euroMillion,
+#button_stats_numero_chance_euroMillion {
+    background-color: rgb(0, 15, 82);
+}
+
+#button_stats_numero_loto,
+#button_stats_numero_chance_loto,
+#button_stats_numero_euroMillion,
+#button_stats_numero_chance_euroMillion {
+    width: 180px;
+}
+
+
+/* ------ Partie Footer ------ */
+
+footer {
     background-color: #111;
     color: #fff;
     padding: 2rem 0;
-  }
-  
-  .footer-container {
+}
+
+.footer-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .footer-links a {
+}
+
+.footer-links a {
     color: #fff;
     margin-right: 1rem;
-  }
-  
-  .footer-social a {
+}
+
+.footer-social a {
     color: #fff;
     font-size: 1.5rem;
     margin-right: 1rem;
-  }
-  
-  .footer-copyright {
-    color: #fff;
-  }
+}
 
-  .errorlist { margin-bottom: -10px }
+.footer-copyright {
+    color: #fff;
+}
+
+.errorlist { margin-bottom: -10px }
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: 5px;
+}

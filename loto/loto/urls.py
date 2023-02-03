@@ -25,6 +25,8 @@ urlpatterns = [
     path('email_sent/', views.email_sent, name="email_sent"),
     path('generate_loto_numbers/', views.generate_loto_numbers, name="generate_loto_numbers"),
     path('generate_euroMillion_numbers/', views.generate_euroMillion_numbers, name="generate_euroMillion_numbers"),
+    path('stats_loto/', views.stats_loto, name="stats_loto"),
+    path('stats_euroMillion/', views.stats_euroMillion, name="stats_euroMillion"),
     path('newRandomLotoNumbers/', views.newRandomLotoNumbers, name="generate_NewRandomLotoNumbers"),
     path('newRandomEuroMillionNumbers/', views.newRandomEuroMillionNumbers, name="generate_NewRandomEuroMillionNumbers"),
 ]

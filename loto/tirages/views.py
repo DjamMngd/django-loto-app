@@ -91,3 +91,29 @@ def newRandomLotoNumbers(request):
 def newRandomEuroMillionNumbers(request):
     random_tirage_euroMillion = mainLoto.get_random_tirage_euroMillion()
     return JsonResponse({'random_tirage_euroMillion': random_tirage_euroMillion})
+
+def stats_loto(request):
+    if request.method == 'POST':
+        if request.POST.get('submit_button') == 'Numeros':
+            df_stats_loto_ordonne = mainLoto.dataFrameOccurrencesNumerosLoto.sort_values(by='numero')
+        else:
+            df_stats_loto_ordonne = mainLoto.dataFrameOccurrencesNumerosChanceLoto
+            df_stats_loto_ordonne.rename(columns={'numero_chance': 'numero'}, inplace=True)
+            df_stats_loto_ordonne = df_stats_loto_ordonne.sort_values(by='numero')
+    else:
+        df_stats_loto_ordonne = mainLoto.dataFrameOccurrencesNumerosLoto.sort_values(by='numero')
+    
+    return render(request, 'loto/stats_loto.html', {'stats' : df_stats_loto_ordonne})
+
+def stats_euroMillion(request):
+    if request.method == 'POST':
+        if request.POST.get('submit_button') == 'Numeros':
+            df_stats_euroMillion_ordonne = mainLoto.dataFrameOccurrencesNumerosEuroMillion.sort_values(by='numero')
+        else:
+            df_stats_euroMillion_ordonne = mainLoto.dataFrameOccurrencesNumerosChanceEuroMillion
+            df_stats_euroMillion_ordonne.rename(columns={'numero_chance': 'numero'}, inplace=True)
+            df_stats_euroMillion_ordonne = df_stats_euroMillion_ordonne.sort_values(by='numero')
+    else:
+        df_stats_euroMillion_ordonne = mainLoto.dataFrameOccurrencesNumerosEuroMillion.sort_values(by='numero')
+    
+    return render(request, 'loto/stats_euroMillion.html', {'stats' : df_stats_euroMillion_ordonne})

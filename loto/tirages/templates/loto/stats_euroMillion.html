@@ -1,0 +1,37 @@
+{% extends 'loto/base.html' %}
+
+{% block title %}Statistiques EuroMillion{% endblock %}
+
+{% block content %}
+
+<h1>Statistiques des tirages EuroMillion</h1>
+
+<form action="{% url 'stats_euroMillion' %}" method="post">
+    {% csrf_token %}
+    <input id="button_stats_numero_euroMillion" type="submit" name="submit_button" value="Numeros">
+    <input id="button_stats_numero_chance_euroMillion" type="submit" name="submit_button" value="Numeros Chance">
+</form>
+
+<table style="width:50%">
+    <caption>
+        <p>Ce tableau prend en compte tous les tirages depuis le 27 septembre 2016</p>
+    </caption>
+
+    <thead>
+        <tr>
+            <th>Numéro</th>
+            <th>Occurrences</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for index, row in stats.iterrows %}
+        <tr>
+            <td>{{ row.numero }}</td>
+            <td>{{ row.occurrences }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

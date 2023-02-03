@@ -1,0 +1,38 @@
+{% extends 'loto/base.html' %}
+
+{% block title %}Statistiques Loto{% endblock %}
+
+{% block content %}
+
+<h1>Statistiques des tirages du Loto</h1>
+
+<form action="{% url 'stats_loto' %}" method="post">
+    {% csrf_token %}
+    <input id="button_stats_numero_loto" type="submit" name="submit_button" value="Numeros">
+    <input id="button_stats_numero_chance_loto" type="submit" name="submit_button" value="Numeros Chance">
+</form>
+
+<table style="width:50%">
+    <caption>
+        <p>Ces statistiques prennent en compte les tirages du SUPER LOTO®, du GRAND LOTO DE NOËL® et du GRAND LOTO</p>
+        <p>Ce tableau prend en compte tous les tirages depuis le 6 octobre 2008</p>
+    </caption>
+
+    <thead>
+        <tr>
+            <th>Numéro</th>
+            <th>Occurrences</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for index, row in stats.iterrows %}
+        <tr>
+            <td>{{ row.numero }}</td>
+            <td>{{ row.occurrences }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
